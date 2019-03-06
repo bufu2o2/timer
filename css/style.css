@@ -1,0 +1,238 @@
+body{
+    background-image: url("../pic/superherobg.jpg");
+    background-repeat: repeat;
+    background-size: 1066px 600px;
+}
+.container{
+    margin: 100px auto;    
+    display: grid;
+    width: 866px;
+    height: 400px;
+    background: yellow;
+    opacity: .9;
+    border: darkgray 4px inset;
+    border-radius: 10px;
+    justify-content: center;
+    align-content: center;
+}
+header{
+    text-align: center;
+    font-family: 'Lakki Reddy', cursive;
+    align-self: center;
+}
+h1{
+    color: rgba(0, 178, 247, 0.8);
+    font-size: 50px;
+    font-weight: 700;
+}
+h3{
+    font-size: 15px;
+    color: rgba(0, 178, 247, .5)
+}
+.main{
+    display: grid;
+    width: 95%;
+    height: 95%;
+    align-self: center;
+    justify-self: center;
+}
+.mode{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Lakki Reddy', cursive;
+}
+.mode div{
+    display: grid;
+    width: 200px;
+    height: 50px;
+    background: rgba(255, 255, 0, 1);
+    border-radius: 10px;
+    justify-self: center;
+    align-content: end;
+    position: relative;
+}
+.mode div:hover {
+    box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+    background: rgba(255, 255, 0, .9);
+    cursor: grabbing;
+    background-image: url('../pic/confetti.gif');
+  }
+.mode div:hover:before, .mode div:hover:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background: #FDA8CFcc;
+    border-radius: 10px;
+    z-index: -1;
+    animation: 1s clockwise infinite;
+  }
+ .mode div:hover:after {
+    background: #F3CE5Ecc;
+    animation: 2s counterclockwise infinite;
+    width: 205px;
+    height: 55px;
+  }
+  @keyframes clockwise {
+    0% {
+      top: -5px;
+      left: 0;
+    }
+    12% {
+      top: -2px;
+      left: 2px;
+    }
+    25% {
+      top: 0;
+      left: 5px;    
+    }
+    37% {
+      top: 2px;
+      left: 2px;
+    }
+    50% {
+      top: 5px;
+      left: 0;    
+    }
+    62% {
+      top: 2px;
+      left: -2px;
+    }
+    75% {
+      top: 0;
+      left: -5px;
+    }
+    87% {
+      top: -2px;
+      left: -2px;
+    }
+    100% {
+      top: -5px;
+      left: 0;    
+    }
+  }
+  @keyframes counterclockwise {
+    0% {
+      top: -5px;
+      right: 0;
+    }
+    12% {
+      top: -2px;
+      right: 2px;
+    }
+    25% {
+      top: 0;
+      right: 5px;    
+    }
+    37% {
+      top: 2px;
+      right: 2px;
+    }
+    50% {
+      top: 5px;
+      right: 0;    
+    }
+    62% {
+      top: 2px;
+      right: -2px;
+    }
+    75% {
+      top: 0;
+      right: -5px;
+    }
+    87% {
+      top: -2px;
+      right: -2px;
+    }
+    100% {
+      top: -5px;
+      right: 0;    
+    }
+  }
+  .game{
+    display: none;
+    grid-template-columns: 1fr 3fr 1fr;
+    justify-items: center;
+    align-items: center;
+    height: 95%;
+    width: 100%;
+}
+.timer, .percent{
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Lakki Reddy', cursive;
+    align-self: center;
+    text-align: center;
+}
+.qcontainer{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+}
+.questions{
+    grid-row: 1;
+    font-family: 'Lakki Reddy', cursive;
+    font-size: 25px;
+    text-align: center;
+}
+.answers{
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+.answers div{
+    display: grid;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    font-family: 'Lakki Reddy', cursive;
+    align-self: center;
+    align-items: end;
+    justify-self: center;
+    justify-items: center;
+    background: none;
+    border: rgba(243, 206, 94, 0) 3px inset;
+    border-radius: 10px;
+}
+.answers div:hover{
+    background-image: url("../pic/confetti.gif");
+    border: rgba(243, 206, 94, 1) inset 3px;
+    cursor: crosshair;
+}
+.end{
+    display: none;
+    margin: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Lakki Reddy', cursive;
+    line-height: 2.5;
+}
+.playAgain{
+    display: grid;
+    width: 80%;
+    height: 90%;
+    font-size: 50px;
+    line-height: 1.5;
+    justify-self: center;
+    align-self: end;
+
+}
+.playAgain:hover{
+    background-image: url("../pic/confetti.gif");
+    color: white;
+    border: rgba(0, 178, 247, 0.8) inset 3px;
+    border-radius: 10px;
+    cursor: crosshair;
+}
