@@ -82,10 +82,10 @@ $("document").ready(() => {
             question: "Which Superhero carries an indestructible shield?",
             answer: "Captain America",
             choices: {
-                a: "The Green Lantern",
+                a: "Wonder Woman",
                 b: "Captain America",
-                c: "Captain Flag",
-                d: "The Red Tornado",
+                c: "Captain Marvel",
+                d: "Thor",
             },
         },
         spidy: {
@@ -95,7 +95,7 @@ $("document").ready(() => {
                 a: "Spiderman",
                 b: "Hell Boy",
                 c: "Batman",
-                d: "The Hulk",
+                d: "Captain America",
             },
         },
         ddevil: {
@@ -103,9 +103,9 @@ $("document").ready(() => {
             answer: "Daredevil",
             choices: {
                 a: "Daredevil",
-                b: "The Flash",
+                b: "Iron Man",
                 c: "Wolverine",
-                d: "Green Lantern",
+                d: "Thor",
             },
         },
         beast: {
@@ -113,8 +113,8 @@ $("document").ready(() => {
             answer: "The Beast",
             choices: {
                 a: "Storm",
-                b: "Shadowcat",
-                c: "Ice Man",
+                b: "Gene Gray",
+                c: "Professor X",
                 d: "The Beast",
             },
         },
@@ -125,7 +125,7 @@ $("document").ready(() => {
                 a: "The Tornado",
                 b: "The Atom",
                 c: "Strom",
-                d: "The Thing",
+                d: "Cyclops",
             },
         },
         cap1: {
@@ -135,16 +135,16 @@ $("document").ready(() => {
                 a: "Spiderman",
                 b: "Captain America",
                 c: "The Hulk",
-                d: "Wolfman",
+                d: "Captain Marvel",
             },
         },
         thing: {
             question: "Which Superhero's tagline is 'It's clobbering time'?",
             answer: "The Thing",
             choices: {
-                a: "Iron Man",
-                b: "Plastic Man",
-                c: "The Green Lantern",
+                a: "The Hulk",
+                b: "Thor",
+                c: "Juggernaut",
                 d: "The Thing",
             },
         },
@@ -152,7 +152,7 @@ $("document").ready(() => {
             question: "Which superhero is also known as Ronin and Goliath?",
             answer: "Hawkeye",
             choices: {
-                a: "Cyclops",
+                a: "Juggernaut",
                 b: "Iron Man",
                 c: "Hawkeye",
                 d: "The Beast",
@@ -163,9 +163,9 @@ $("document").ready(() => {
             answer: "The Flash",
             choices: {
                 a: "The Flash",
-                b: "Speedball",
-                c: "Stardust",
-                d: "The Thing",
+                b: "Black Widow",
+                c: "Iron Man",
+                d: "Daredevil",
             },
         },
         pi: {
@@ -228,6 +228,7 @@ $("document").ready(() => {
                 $('.correct').html('<h4> Correct Answers<br>' + game.correct + '</h4>');
                 $('.playAgain').html('Play Again?');
                 $('.incorrect').html('<h4> Incorrect Answers<br>' + game.incorrect + '</h4>');
+                game.win();
                 $('.playAgain').on('click', game.reset);
             }, 800);
 
@@ -281,6 +282,11 @@ $("document").ready(() => {
                 game.next();
             });
         },
+        win: () => {
+            if(game.correct === 10){
+                $('.perfect').css('display', 'grid').text('PERFECT!');
+            }
+        },
         next: () => {
             q.RQG();
             q.display();
@@ -293,6 +299,7 @@ $("document").ready(() => {
             clearInterval(timer.i);
             $('.game').fadeOut(500);
             $('.end').fadeOut(500);
+            $('.perfect').fadeOut(500);
             setTimeout(() => {
                 $('.mode').fadeIn();
             }, 800);
